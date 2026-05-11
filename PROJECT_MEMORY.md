@@ -13,13 +13,16 @@
   - **Rounded Aesthetics**: All main CTA buttons and cards use `rounded-full` or `rounded-3xl` for an approachable academic feel.
   - **Navbar Optimization**: Minimalist gaps (`gap-4`) and refined font sizes (`text-[10px]`) for clean horizontal alignment.
   - **Exception**: The Hero "SINCE 1979" flag remains sharp (`rounded-none`) to stand out as a historical anchor.
-  - **Interaction**: Deliberate transitions (700ms+), subtle scale-ups, and elegant border glows.
+  - **Mobile Specifics**: 
+    - Hero background uses moving blue grid lines instead of pixel-hover.
+    - Simplified 2-column grids for complex desktop layouts.
 
 ## 2. Technical Features & Animations
 - **Smooth Scrolling**: Lenis global inertial scrolling.
 - **Motion Effects**: 
   - GSAP (ScrollTrigger) for text-reveal and background parallax.
-  - Interactive Tile Grid in Hero (Flipping to Sky Blue on hover for 3s).
+  - Interactive Tile Grid in Hero (Desktop only, flipping to Sky Blue on hover for 3s).
+  - Moving Grid (Mobile only, constant blue linear motion).
   - Roadmap Staggered Entry for Methodology.
 - **Form Integration**:
   - **Admissions Form**: Connected to WhatsApp (K Suresh: +91 9703174756) for direct lead generation.

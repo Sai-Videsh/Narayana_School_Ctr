@@ -44,7 +44,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -5 }}
-              className="p-10 bg-white rounded-none relative border-4 border-transparent hover:border-black transition-all duration-700 shadow-xl"
+              className="p-6 md:p-10 bg-white rounded-3xl relative border-4 border-transparent hover:border-black transition-all duration-700 shadow-xl"
             >
               <Quote className="absolute top-10 right-10 w-12 h-12 text-brand-orange opacity-10" />
               <p className="text-gray-600 text-lg mb-8 relative z-10 italic leading-relaxed">"{t.quote}"</p>

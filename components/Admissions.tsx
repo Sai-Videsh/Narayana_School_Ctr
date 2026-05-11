@@ -21,53 +21,53 @@ export default function Admissions() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappNumber = "9703174756"; // Updated to K Suresh
+    const whatsappNumber = "9703174756";
     const text = `Hello Narayana Schools Chittoor,%0A%0A*Admission Enquiry*%0A*Name:* ${formData.firstName} ${formData.lastName}%0A*Email:* ${formData.email}%0A*Class:* ${formData.grade}%0A*Message:* ${formData.message}`;
     window.open(`https://wa.me/91${whatsappNumber}?text=${text}`, "_blank");
   };
 
   return (
-    <section id="admissions" className="py-24 bg-white">
+    <section id="admissions" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
           <div>
-            <h2 className="font-display font-medium text-4xl md:text-6xl tracking-tight text-dark mb-12 uppercase">
+            <h2 className="font-display font-medium text-3xl sm:text-5xl md:text-6xl tracking-tight text-dark mb-10 md:mb-12 uppercase leading-tight">
               ADMISSION <br /> <span className="text-brand-orange">PROCESS.</span>
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {steps.map((step, i) => (
                 <motion.div 
                   key={i} 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex gap-8 items-start group"
+                  className="flex gap-4 md:gap-8 items-start group"
                 >
-                  <span className="text-5xl font-display font-bold text-brand-orange/10 group-hover:text-brand-orange transition-colors duration-500">
+                  <span className="text-3xl md:text-5xl font-display font-bold text-brand-orange/10 group-hover:text-brand-orange transition-colors duration-500">
                     {step.num}
                   </span>
                   <div>
-                    <h4 className="text-2xl font-bold text-dark mb-2 uppercase">{step.title}</h4>
-                    <p className="text-gray-600 text-lg">{step.desc}</p>
+                    <h4 className="text-xl md:text-2xl font-bold text-dark mb-1 md:mb-2 uppercase">{step.title}</h4>
+                    <p className="text-gray-600 text-sm md:text-lg">{step.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          <div className="glass border border-brand-blue/10 p-12 rounded-[3rem] relative overflow-hidden shadow-2xl transition-all duration-700">
+          <div className="glass border border-brand-blue/10 p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] relative overflow-hidden shadow-2xl transition-all duration-700">
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 blur-3xl -translate-y-1/2 translate-x-1/2" />
             
-            <h3 className="text-3xl font-display font-bold text-dark mb-10 uppercase tracking-tighter">ENQUIRY FORM</h3>
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-              <div className="grid grid-cols-2 gap-4">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-dark mb-8 md:mb-10 uppercase tracking-tighter">ENQUIRY FORM</h3>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 relative z-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input 
                   type="text" 
                   placeholder="First Name" 
                   required
                   value={formData.firstName}
                   onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                  className="bg-surface border-2 border-brand-blue/10 p-5 rounded-2xl text-dark outline-none focus:border-brand-orange transition-colors" 
+                  className="bg-surface border-2 border-brand-blue/10 p-4 md:p-5 rounded-xl md:rounded-2xl text-sm md:text-base text-dark outline-none focus:border-brand-orange transition-colors" 
                 />
                 <input 
                   type="text" 
@@ -75,7 +75,7 @@ export default function Admissions() {
                   required
                   value={formData.lastName}
                   onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                  className="bg-surface border-2 border-brand-blue/10 p-5 rounded-2xl text-dark outline-none focus:border-brand-orange transition-colors" 
+                  className="bg-surface border-2 border-brand-blue/10 p-4 md:p-5 rounded-xl md:rounded-2xl text-sm md:text-base text-dark outline-none focus:border-brand-orange transition-colors" 
                 />
               </div>
               <input 
@@ -84,12 +84,12 @@ export default function Admissions() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="w-full bg-surface border-2 border-brand-blue/10 p-5 rounded-2xl text-dark outline-none focus:border-brand-orange transition-colors" 
+                className="w-full bg-surface border-2 border-brand-blue/10 p-4 md:p-5 rounded-xl md:rounded-2xl text-sm md:text-base text-dark outline-none focus:border-brand-orange transition-colors" 
               />
               <select 
                 value={formData.grade}
                 onChange={(e) => setFormData({...formData, grade: e.target.value})}
-                className="w-full bg-surface border-2 border-brand-blue/10 p-5 rounded-2xl text-dark outline-none focus:border-brand-orange transition-colors"
+                className="w-full bg-surface border-2 border-brand-blue/10 p-4 md:p-5 rounded-xl md:rounded-2xl text-sm md:text-base text-dark outline-none focus:border-brand-orange transition-colors"
               >
                 <option disabled>Select Class</option>
                 <option>Class 6th-10th</option>
@@ -100,18 +100,18 @@ export default function Admissions() {
                 rows={4} 
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="w-full bg-surface border-2 border-brand-blue/10 p-5 rounded-2xl text-dark outline-none focus:border-brand-orange transition-colors"
+                className="w-full bg-surface border-2 border-brand-blue/10 p-4 md:p-5 rounded-xl md:rounded-2xl text-sm md:text-base text-dark outline-none focus:border-brand-orange transition-colors"
               ></textarea>
-              <button type="submit" className="w-full py-5 bg-brand-orange text-white font-bold rounded-2xl hover:bg-brand-blue-dark transition-all shadow-xl shadow-brand-orange/10 mb-6 uppercase tracking-widest">
+              <button type="submit" className="w-full py-4 md:py-5 bg-brand-orange text-white font-bold rounded-xl md:rounded-2xl hover:bg-brand-blue-dark transition-all shadow-xl shadow-brand-orange/10 mb-4 md:mb-6 uppercase tracking-widest text-xs md:text-sm">
                 SUBMIT VIA WHATSAPP
               </button>
               <div className="text-center">
-                <span className="text-xs text-gray-400 font-bold">OR</span>
+                <span className="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest">OR</span>
                 <a 
                   href="https://www.narayanaschools.in/admission-enquiry-form" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block mt-4 text-brand-blue font-bold text-sm hover:underline uppercase tracking-widest"
+                  className="block mt-4 text-brand-blue font-bold text-[10px] md:text-sm hover:underline uppercase tracking-widest"
                 >
                   VISIT OFFICIAL ENQUIRY PORTAL
                 </a>

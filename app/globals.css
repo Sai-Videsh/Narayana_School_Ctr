@@ -20,12 +20,15 @@
   --accent-blue: var(--color-brand-blue);
 }
 
+html,
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .font-display {

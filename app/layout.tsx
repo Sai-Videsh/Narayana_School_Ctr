@@ -15,6 +15,11 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Narayana School | Chittoor, Andhra Pradesh",
   description: "Empowering the leaders of tomorrow with world-class education and academic excellence at Narayana School, Chittoor.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  }
 };
 
 export default function RootLayout({

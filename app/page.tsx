@@ -17,7 +17,7 @@ import SpecialProgrammes from "@/components/SpecialProgrammes";
 export default function Home() {
   return (
     <SmoothScroll>
-      <main className="bg-white text-dark selection:bg-brand-blue selection:text-white">
+      <main className="w-full max-w-full bg-white text-dark selection:bg-brand-blue selection:text-white overflow-x-clip">
         <Navbar />
         <Hero />
         <About />
