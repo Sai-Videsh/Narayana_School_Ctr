@@ -89,8 +89,8 @@ export default function Hero() {
       </div>
 
       {/* Mobile Moving Grid Lines */}
-      <div className="absolute inset-0 z-0 md:hidden overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 moving-grid opacity-20" />
+      <div className="absolute inset-0 z-15 md:hidden overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 moving-grid" />
       </div>
 
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -105,7 +105,7 @@ export default function Hero() {
 
         <h1
           ref={titleRef}
-          className="font-display font-medium text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.2] md:leading-[1.1] text-dark uppercase mb-6"
+          className="font-display font-medium text-6xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.2] md:leading-[1.1] text-dark uppercase mb-6"
         >
           <span className="text-reveal-container block">
             <span className="text-reveal-line">ASIA'S LARGEST</span>
@@ -157,16 +157,16 @@ export default function Hero() {
         }
         
         .moving-grid {
-          background-size: 40px 40px;
-          background-image:
-            linear-gradient(to right, rgba(14, 165, 233, 0.2) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(14, 165, 233, 0.2) 1px, transparent 1px);
-          animation: moveGrid 20s linear infinite;
+          background-size: 80px 80px;
+          background-image: 
+            linear-gradient(to bottom, rgba(14, 165, 233, 0.4) 1px, transparent 1px),
+            linear-gradient(to right, rgba(14, 165, 233, 0.4) 1px, transparent 1px);
+          animation: moveGrid 3s linear infinite;
         }
 
         @keyframes moveGrid {
-          from { transform: translateY(0); }
-          to { transform: translateY(40px); }
+          from { background-position: 0 0; }
+          to { background-position: 80px 80px; }
         }
       `}</style>
     </section>

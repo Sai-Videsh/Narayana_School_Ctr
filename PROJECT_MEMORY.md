@@ -14,15 +14,17 @@
   - **Navbar Optimization**: Minimalist gaps (`gap-4`) and refined font sizes (`text-[10px]`) for clean horizontal alignment.
   - **Exception**: The Hero "SINCE 1979" flag remains sharp (`rounded-none`) to stand out as a historical anchor.
   - **Mobile Specifics**: 
-    - Hero background uses moving blue grid lines instead of pixel-hover.
+    - Hero headline scaled to `text-4xl` for bold impact on small screens.
+    - Hero background uses high-speed (3s), large (80px) diagonal-moving blue square grid.
     - Simplified 2-column grids for complex desktop layouts.
+    - Strict horizontal containment (`overflow-x-clip`).
 
 ## 2. Technical Features & Animations
 - **Smooth Scrolling**: Lenis global inertial scrolling.
 - **Motion Effects**: 
   - GSAP (ScrollTrigger) for text-reveal and background parallax.
   - Interactive Tile Grid in Hero (Desktop only, flipping to Sky Blue on hover for 3s).
-  - Moving Grid (Mobile only, constant blue linear motion).
+  - Hyper-Fast Moving Grid (Mobile only, constant blue diagonal motion via background-position).
   - Roadmap Staggered Entry for Methodology.
 - **Form Integration**:
   - **Admissions Form**: Connected to WhatsApp (K Suresh: +91 9703174756) for direct lead generation.
