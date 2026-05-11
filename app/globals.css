@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-lora), ui-serif, Georgia, serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+  
+  --color-brand-orange: #FF6B00;
+  --color-brand-blue: #0EA5E9; /* Sky Blue */
+  --color-brand-blue-dark: #0369A1;
+  --color-dark: #0F172A; /* Deep Slate for text */
+  --color-light: #FFFFFF;
+  --color-surface: #F8FAFC; /* Very Light Blue-Gray */
+  --color-surface-2: #F1F5F9;
+}
+
+:root {
+  --background: var(--color-light);
+  --foreground: var(--color-dark);
+  --accent-orange: var(--color-brand-orange);
+  --accent-blue: var(--color-brand-blue);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.text-reveal-container {
+  overflow: hidden;
+}
+
+.text-reveal-line {
+  display: block;
+}
+
+/* Lenis CSS */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
